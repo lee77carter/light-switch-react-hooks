@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.wall {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: background-color 2s ease-out;
+}
+.on {
+  background-color: white;
+}
+.off {
+  background-color: black;
+}
+.switch-plate {
+  width: 150px;
+  height: 250px;
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.off .switch-plate {
+  background-color: rgb(88, 88, 71);
+}
+.screw {
+  width: 15px;
+  height: 15px;
+  border: 1px solid lightgrey;
+  border-radius: 50%;
+  background-color: lightgoldenrodyellow;
+  box-shadow: 2px 2px 4px darkgrey;
+}
+
+.off .screw {
+  background-color: rgb(88, 88, 71);
+}
+.switch {
+  width: 30px;
+  height: 80px;
+  background-color: rgb(223, 223, 152, 0.6);
+  border-radius: 5px;
+  position: relative;
+}
+.switch-handle {
+  position: absolute;
+  background-color: rgb(223, 223, 152);
+  border: 1px solid black;
+  width: 24px;
+  height: 50px;
+  box-shadow: 4px 0 3px -1px rgba(0, 0, 0, 0.85);
+  left: 2px;
+}
+
+.on .switch-handle {
+  top: -10px;
+}
+
+.off .switch-handle {
+  bottom: -10px;
+}

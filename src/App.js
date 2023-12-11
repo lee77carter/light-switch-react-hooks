@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { on: true };
+
+  toggleLight = () => {
+    const isOn = this.state.on;
+    this.setState({ on: !isOn });
+  };
+
+  render() {
+    let wallClass = "wall off";
+    if (this.state.on) {
+      wallClass = "wall on";
+    }
+    return (
+      <div className={wallClass}>
+        <div className="switch-plate">
+          <div className="screw" />
+          <div className="switch" onClick={this.toggleLight}>
+            <div className="switch-handle" />
+          </div>
+          <div className="screw" />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
